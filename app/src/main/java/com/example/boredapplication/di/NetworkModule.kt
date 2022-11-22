@@ -9,6 +9,7 @@ import retrofit2.converter.moshi.MoshiConverterFactory
 val networkModule = module {
     factory { provideOkHttpClient() }
     factory { provideRetrofit(get()) }
+    factory { provideBoredApi(get()) }
 }
 
 fun provideRetrofit(okHttpClient: OkHttpClient): Retrofit =
@@ -20,6 +21,6 @@ fun provideRetrofit(okHttpClient: OkHttpClient): Retrofit =
 
 fun provideOkHttpClient(): OkHttpClient = OkHttpClient().newBuilder().build()
 
-fun boredApi(retrofit: Retrofit): BoredApi = retrofit.create(BoredApi::class.java)
+fun provideBoredApi(retrofit: Retrofit): BoredApi = retrofit.create(BoredApi::class.java)
 
-private const val BASE_URL = "http://www.boredapi.com"
+private const val BASE_URL = "https://www.boredapi.com"
