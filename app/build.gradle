@@ -44,4 +44,9 @@ dependencies {
 
     // Depency injection
     implementation "io.insert-koin:koin-android:3.3.0"
+
+    // Network requests
+    def retrofit_version = "2.9.0"
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    implementation "com.squareup.retrofit2:converter-moshi:$retrofit_version"
 }
