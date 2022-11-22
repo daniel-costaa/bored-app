@@ -5,5 +5,5 @@ import retrofit2.http.GET
 
 interface BoredApi {
     @GET("/api/activity/")
-    fun getRandomEvent(): BoredActivity
+    suspend fun getRandomEvent(): BoredActivity
 }
