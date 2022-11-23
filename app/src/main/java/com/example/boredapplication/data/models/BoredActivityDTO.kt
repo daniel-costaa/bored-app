@@ -2,7 +2,7 @@ package com.example.boredapplication.data.models
 
 import com.squareup.moshi.Json
 
-data class BoredActivity(
+data class BoredActivityDTO(
     @Json(name = "accessibility")
     val accessibility: Double,
     @Json(name = "activity")
