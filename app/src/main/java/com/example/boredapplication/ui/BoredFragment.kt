@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import com.example.boredapplication.data.models.BoredActivityUi
 import com.example.boredapplication.databinding.FragmentBoredBinding
@@ -47,9 +48,30 @@ class BoredFragment : Fragment() {
     }
 
     private fun setupListeners() {
-        binding.buttonGetActivity.setOnClickListener {
-            boredViewModel.getActivity(null)
+        with(binding) {
+            buttonGetActivity.setOnClickListener {
+                boredViewModel.getActivity(null)
+            }
+
+            buttonStart.setOnClickListener {
+                toggleButtons(isRunning = false)
+            }
+
+            buttonFinish.setOnClickListener {
+                toggleButtons(isRunning = true)
+            }
+
+            buttonGiveUp.setOnClickListener {
+                toggleButtons(isRunning = true)
+            }
         }
+
+    }
+
+    private fun FragmentBoredBinding.toggleButtons(isRunning: Boolean) {
+        buttonStart.isVisible = isRunning
+        buttonFinish.isVisible = !isRunning
+        buttonGiveUp.isVisible = !isRunning
     }
 
     override fun onDestroyView() {
