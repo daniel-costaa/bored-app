@@ -3,4 +3,5 @@
     <string name="button_start">Start</string>
     <string name="button_give_up">Give up</string>
     <string name="button_finish">Finish</string>
+    <string name="button_get_activity">Get activity</string>
 </resources>
