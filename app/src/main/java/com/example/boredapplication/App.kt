@@ -4,6 +4,7 @@ import android.app.Application
 import com.example.boredapplication.di.databaseModule
 import com.example.boredapplication.di.networkModule
 import com.example.boredapplication.di.repositoryModule
+import com.example.boredapplication.di.viewModelModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 
@@ -13,7 +14,13 @@ class App : Application() {
 
         startKoin {
             androidContext(this@App)
-            modules(networkModule, repositoryModule, databaseModule)
+
+            modules(
+                networkModule,
+                repositoryModule,
+                databaseModule,
+                viewModelModule
+            )
         }
     }
 }
