@@ -1,8 +1,9 @@
-package com.example.boredapplication.data.models
+package com.example.boredapplication.data.entities
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import com.example.boredapplication.data.models.ActivityStatus
 
 @Entity(tableName = "activity_table")
 data class BoredActivityEntity(
