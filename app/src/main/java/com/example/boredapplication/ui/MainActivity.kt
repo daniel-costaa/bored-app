@@ -1,8 +1,9 @@
-package com.example.boredapplication
+package com.example.boredapplication.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.lifecycleScope
+import com.example.boredapplication.R
 import com.example.boredapplication.data.repositories.BoredRepository
 import org.koin.android.ext.android.inject
 
