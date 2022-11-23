@@ -72,6 +72,7 @@ class BoredFragment : Fragment() {
         buttonStart.isVisible = isRunning
         buttonFinish.isVisible = !isRunning
         buttonGiveUp.isVisible = !isRunning
+        buttonGetActivity.isEnabled = isRunning
     }
 
     override fun onDestroyView() {
