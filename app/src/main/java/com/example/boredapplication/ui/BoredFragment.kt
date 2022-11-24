@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
+import com.example.boredapplication.data.models.ActivityStatus
 import com.example.boredapplication.data.models.BoredActivityUi
 import com.example.boredapplication.databinding.FragmentBoredBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -55,14 +56,18 @@ class BoredFragment : Fragment() {
 
             buttonStart.setOnClickListener {
                 toggleButtons(isRunning = false)
+                boredViewModel.setStartTime()
+                boredViewModel.saveActivity()
             }
 
             buttonFinish.setOnClickListener {
                 toggleButtons(isRunning = true)
+                boredViewModel.updateExtraData(ActivityStatus.REALIZADA)
             }
 
             buttonGiveUp.setOnClickListener {
                 toggleButtons(isRunning = true)
+                boredViewModel.updateExtraData(ActivityStatus.DESISTENCIA)
             }
         }
 
