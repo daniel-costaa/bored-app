@@ -4,5 +4,5 @@ import com.example.boredapplication.data.repositories.BoredRepository
 import org.koin.dsl.module
 
 val repositoryModule = module {
-    factory { BoredRepository(get()) }
+    factory { BoredRepository(get(), get()) }
 }
