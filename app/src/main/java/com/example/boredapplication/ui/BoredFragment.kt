@@ -1,17 +1,18 @@
 package com.example.boredapplication.ui
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
+import android.widget.PopupMenu
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
+import com.example.boredapplication.R
 import com.example.boredapplication.data.models.ActivityStatus
+import com.example.boredapplication.data.models.ActivityTypes
 import com.example.boredapplication.data.models.BoredActivityUi
 import com.example.boredapplication.databinding.FragmentBoredBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class BoredFragment : Fragment() {
+class BoredFragment : Fragment(), PopupMenu.OnMenuItemClickListener {
     private var _binding: FragmentBoredBinding? = null
     private val binding get() = _binding!!
 
@@ -51,7 +52,7 @@ class BoredFragment : Fragment() {
     private fun setupListeners() {
         with(binding) {
             buttonGetActivity.setOnClickListener {
-                boredViewModel.getActivity(null)
+                boredViewModel.getActivity()
                 checkIfNeedsToEnableStartButton()
             }
 
@@ -70,6 +71,14 @@ class BoredFragment : Fragment() {
                 toggleButtons(isRunning = true)
                 boredViewModel.updateExtraData(ActivityStatus.DESISTENCIA)
             }
+
+            menuType.setOnClickListener {
+                PopupMenu(requireContext(), it).apply {
+                    setOnMenuItemClickListener(this@BoredFragment)
+                    inflate(R.menu.activity_types_menu)
+                    show()
+                }
+            }
         }
 
     }
@@ -85,6 +94,28 @@ class BoredFragment : Fragment() {
         buttonFinish.isVisible = !isRunning
         buttonGiveUp.isVisible = !isRunning
         buttonGetActivity.isEnabled = isRunning
+    }
+
+    override fun onMenuItemClick(item: MenuItem?): Boolean {
+        item?.let {
+            val type = when (it.itemId) {
+                R.id.education -> ActivityTypes.EDUCATIONAL
+                R.id.recreational -> ActivityTypes.RECREATIONAL
+                R.id.social -> ActivityTypes.SOCIAL
+                R.id.diy -> ActivityTypes.DIY
+                R.id.charity -> ActivityTypes.CHARITY
+                R.id.cooking -> ActivityTypes.COOKING
+                R.id.relaxation -> ActivityTypes.RELAXTION
+                R.id.music -> ActivityTypes.MUSIC
+                R.id.busywork -> ActivityTypes.BUSYWORK
+                else -> null
+            }
+
+            binding.menuType.text = item.title
+            boredViewModel.setActivityType(type)
+        }
+
+        return true
     }
 
     override fun onDestroyView() {

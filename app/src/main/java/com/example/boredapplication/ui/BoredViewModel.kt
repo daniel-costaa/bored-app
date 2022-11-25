@@ -14,11 +14,13 @@ class BoredViewModel(private val boredRepository: BoredRepository) : ViewModel()
     private val _currentActivity = MutableLiveData<BoredActivityUi>()
     val currentActivity: LiveData<BoredActivityUi>; get() = _currentActivity
 
+    private val _selectedActivityType = MutableLiveData<ActivityTypes?>()
+
     var startTime: Long = 0L
 
-    fun getActivity(type: ActivityTypes?) {
+    fun getActivity() {
         viewModelScope.launch {
-            val activity = boredRepository.getRandomActivity(type)
+            val activity = boredRepository.getRandomActivity(_selectedActivityType.value)
             _currentActivity.postValue(activity)
         }
     }
@@ -42,5 +44,9 @@ class BoredViewModel(private val boredRepository: BoredRepository) : ViewModel()
 
     fun setStartTime() {
         startTime = System.currentTimeMillis()
+    }
+
+    fun setActivityType(type: ActivityTypes?) {
+        _selectedActivityType.value = type
     }
 }
