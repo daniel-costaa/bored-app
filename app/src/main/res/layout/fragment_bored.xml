@@ -7,7 +7,7 @@
     tools:context=".ui.BoredFragment">
 
     <com.google.android.material.card.MaterialCardView
-        android:id="@+id/teste"
+        android:id="@+id/activityCard"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
@@ -133,11 +133,11 @@
         android:id="@+id/buttonStart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/button_start"
         android:enabled="false"
-        app:layout_constraintEnd_toEndOf="@id/teste"
-        app:layout_constraintStart_toStartOf="@id/teste"
-        app:layout_constraintTop_toBottomOf="@id/teste" />
+        android:text="@string/button_start"
+        app:layout_constraintEnd_toEndOf="@id/activityCard"
+        app:layout_constraintStart_toStartOf="@id/activityCard"
+        app:layout_constraintTop_toBottomOf="@id/activityCard" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/buttonGiveUp"
@@ -146,8 +146,8 @@
         android:layout_marginStart="50dp"
         android:text="@string/button_give_up"
         android:visibility="gone"
-        app:layout_constraintStart_toStartOf="@id/teste"
-        app:layout_constraintTop_toBottomOf="@id/teste" />
+        app:layout_constraintStart_toStartOf="@id/activityCard"
+        app:layout_constraintTop_toBottomOf="@id/activityCard" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/buttonFinish"
@@ -156,8 +156,28 @@
         android:layout_marginEnd="50dp"
         android:text="@string/button_finish"
         android:visibility="gone"
-        app:layout_constraintEnd_toEndOf="@id/teste"
-        app:layout_constraintTop_toBottomOf="@id/teste" />
+        app:layout_constraintEnd_toEndOf="@id/activityCard"
+        app:layout_constraintTop_toBottomOf="@id/activityCard" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewSelectType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:text="@string/selected_type"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/button_getActivity"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/menuType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="--"
+        app:layout_constraintBottom_toBottomOf="@id/textViewSelectType"
+        app:layout_constraintStart_toEndOf="@id/textViewSelectType"
+        app:layout_constraintTop_toTopOf="@id/textViewSelectType" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_getActivity"

@@ -10,4 +10,14 @@
     <string name="link">Link</string>
     <string name="accessibility">Acessibilidade</string>
     <string name="price">Preço</string>
+    <string name="education">Educação</string>
+    <string name="recreational">Recreacional</string>
+    <string name="social">Social</string>
+    <string name="diy">DIY</string>
+    <string name="charity">Caridade</string>
+    <string name="cooking">Cozinhando</string>
+    <string name="relaxation">Relaxamento</string>
+    <string name="music">Música</string>
+    <string name="busywork">Trabalho duro</string>
+    <string name="selected_type">Tipo selecionado:</string>
 </resources>
