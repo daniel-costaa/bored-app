@@ -1,7 +1,13 @@
 <resources>
     <string name="app_name">Bored Application</string>
-    <string name="button_start">Start</string>
-    <string name="button_give_up">Give up</string>
-    <string name="button_finish">Finish</string>
-    <string name="button_get_activity">Get activity</string>
+    <string name="button_start">Começar</string>
+    <string name="button_give_up">Desistir</string>
+    <string name="button_finish">Terminar</string>
+    <string name="button_get_activity">Obter atividade</string>
+    <string name="title">Titulo</string>
+    <string name="type">Tipo</string>
+    <string name="participants">Participantes</string>
+    <string name="link">Link</string>
+    <string name="accessibility">Acessibilidade</string>
+    <string name="price">Preço</string>
 </resources>

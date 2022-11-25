@@ -40,11 +40,11 @@ class BoredFragment : Fragment() {
 
     private fun fillActivityData(boredActivityUi: BoredActivityUi) {
         with(binding) {
-            tvActivityDescription.text = boredActivityUi.activity
-            tvActivityType.text = boredActivityUi.type
-            tvAccessibility.text = boredActivityUi.accessibility.toString()
-            tvPrice.text = boredActivityUi.price.toString()
-            tvParticipants.text = boredActivityUi.participants.toString()
+            textViewActivityNameValue.text = boredActivityUi.activity
+            textViewActivityTypeValue.text = boredActivityUi.type
+            textViewActivityAccessibilityValue.text = boredActivityUi.accessibility.toString()
+            textViewActivityPriceValue.text = boredActivityUi.price.toString()
+            textViewActivityParticipantsValue.text = boredActivityUi.participants.toString()
         }
     }
 
