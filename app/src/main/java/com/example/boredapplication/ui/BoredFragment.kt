@@ -52,6 +52,7 @@ class BoredFragment : Fragment() {
         with(binding) {
             buttonGetActivity.setOnClickListener {
                 boredViewModel.getActivity(null)
+                checkIfNeedsToEnableStartButton()
             }
 
             buttonStart.setOnClickListener {
@@ -71,6 +72,12 @@ class BoredFragment : Fragment() {
             }
         }
 
+    }
+
+    private fun FragmentBoredBinding.checkIfNeedsToEnableStartButton() {
+        if (!buttonStart.isEnabled) {
+            buttonStart.isEnabled = true
+        }
     }
 
     private fun FragmentBoredBinding.toggleButtons(isRunning: Boolean) {
