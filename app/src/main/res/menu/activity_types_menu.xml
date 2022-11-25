@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/education"
+            android:title="@string/education" />
+
+        <item
+            android:id="@+id/recreational"
+            android:title="@string/recreational" />
+
+        <item
+            android:id="@+id/social"
+            android:title="@string/social" />
+
+        <item
+            android:id="@+id/diy"
+            android:title="@string/diy" />
+
+        <item
+            android:id="@+id/charity"
+            android:title="@string/charity" />
+
+        <item
+            android:id="@+id/cooking"
+            android:title="@string/cooking" />
+
+        <item
+            android:id="@+id/relaxation"
+            android:title="@string/relaxation" />
+
+        <item
+            android:id="@+id/music"
+            android:title="@string/music" />
+
+        <item
+            android:id="@+id/busywork"
+            android:title="@string/busywork" />
+    </group>
+</menu>
