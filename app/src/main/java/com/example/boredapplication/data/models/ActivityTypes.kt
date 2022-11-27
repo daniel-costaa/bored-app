@@ -1,13 +1,13 @@
 package com.example.boredapplication.data.models
 
 enum class ActivityTypes {
-    EDUCATIONAL,
+    EDUCATION,
     RECREATIONAL,
     SOCIAL,
     DIY,
     CHARITY,
     COOKING,
-    RELAXTION,
+    RELAXATION,
     MUSIC,
     BUSYWORK
 }

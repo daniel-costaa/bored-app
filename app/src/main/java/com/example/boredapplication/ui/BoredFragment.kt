@@ -99,13 +99,13 @@ class BoredFragment : Fragment(), PopupMenu.OnMenuItemClickListener {
     override fun onMenuItemClick(item: MenuItem?): Boolean {
         item?.let {
             val type = when (it.itemId) {
-                R.id.education -> ActivityTypes.EDUCATIONAL
+                R.id.education -> ActivityTypes.EDUCATION
                 R.id.recreational -> ActivityTypes.RECREATIONAL
                 R.id.social -> ActivityTypes.SOCIAL
                 R.id.diy -> ActivityTypes.DIY
                 R.id.charity -> ActivityTypes.CHARITY
                 R.id.cooking -> ActivityTypes.COOKING
-                R.id.relaxation -> ActivityTypes.RELAXTION
+                R.id.relaxation -> ActivityTypes.RELAXATION
                 R.id.music -> ActivityTypes.MUSIC
                 R.id.busywork -> ActivityTypes.BUSYWORK
                 else -> null
